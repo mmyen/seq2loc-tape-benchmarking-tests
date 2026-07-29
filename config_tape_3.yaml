@@ -1,0 +1,41 @@
+method: grid
+metric:
+  goal: maximize
+  name: overall_valid/macro_ap
+parameters:
+  exp_folder: 
+    value: /content/sweep_experiments
+  exp_name:
+    value: TAPE
+  embeddings_file: 
+    value: /content/embeddings/TAPE-4k.h5
+  embedding_dim:
+    value: 768
+  testset_file:
+    value: "/content/seq2loc_benchmark/datasets/final/hou_testset.csv"
+  category_level:
+    value: "level3"
+  batch_size:
+    value: 64
+  valid_every:
+    value: 2
+  mlp_hidden_dim:
+    value: 512
+  mlp_num_hidden_layers:
+    value: 2
+  max_epochs: 
+    value: 25
+  init_lr: 
+    value: 1.e-3
+  clip_len:
+    value: 1024
+  mlp_dropout:
+    value: 0
+  agg_method:
+    value: "MultiHeadAttentionPool"
+  loss:
+    value: "BCEWithLogitsLoss"
+  optimizer:
+    value: "AdamW"
+  metadata_file:
+    value: "/content/seq2loc_benchmark/datasets/final/hpa_uniprot_combined_trainset.csv"
